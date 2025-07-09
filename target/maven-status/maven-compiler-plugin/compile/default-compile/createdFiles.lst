@@ -1,2 +1,7 @@
+com\example\DatabaseConnection.class
+com\example\Eleves.class
 com\example\App.class
+com\example\MainController$1.class
+com\example\MainController.class
+com\example\ElevesDAO.class
 com\example\HomeController.class
