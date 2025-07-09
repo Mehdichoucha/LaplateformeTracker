@@ -1,34 +1,24 @@
-// pour lancer le code dans le terminal : mvn clean javafx:run
-// pour compiler le code dans le terminal : mvn clean package
-
 package com.example;
 
+import java.io.IOException;
+
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class App extends Application {
-    public static void main(String[] args) {
-        launch(args);
-    }
 
     @Override
-    public void start(Stage primaryStage) {
-        TextField nameField = new TextField();
-        nameField.setPromptText("Name");
-        nameField.setLayoutX(50);
-        nameField.setLayoutY(50);
-        nameField.setPrefWidth(300);
-        nameField.setPrefHeight(30);
+    public void start(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/menu_home.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Laplateforme Tracker");
+        stage.setScene(scene);
+        stage.show();
+    }
 
-        Pane root = new Pane();
-        root.getChildren().add(nameField);
-
-        Scene scene = new Scene(root, 800, 600);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("Plateforme tracker");
-        primaryStage.show();
+    public static void main(String[] args) {
+        launch();
     }
 }

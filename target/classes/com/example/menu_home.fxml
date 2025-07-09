@@ -7,7 +7,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="337.0" prefWidth="450.0" style="-fx-background-color: #033E85;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:controller="com.example.HomeController"
+            maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="337.0" prefWidth="450.0"
+            style="-fx-background-color: #033E85;"
+            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane layoutX="47.0" layoutY="54.0" prefHeight="230.0" prefWidth="356.0" style="-fx-background-color: #FFFFFF;">
          <children>
@@ -17,7 +21,7 @@
                   <Font size="15.0" />
                </font>
             </Text>
-            <Button layoutX="124.0" layoutY="179.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Connexion" />
+            <Button fx:id="btnConnexion" layoutX="124.0" layoutY="179.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Connexion" onAction="#logintomenu" />
             <Pane layoutX="91.0" layoutY="14.0" prefHeight="27.0" prefWidth="175.0">
                <children>
                   <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue" wrappingWidth="200.755859375">
