@@ -3,9 +3,16 @@ package com.example;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -82,4 +89,80 @@ public class MainController implements Initializable {
     private void actualiserDonnees() {
         chargerDonnees();
     }
+
+    @FXML
+    private Button btnDeconnexion;  // lien avec le bouton Déconnexion du FXML
+
+    @FXML
+    private void logoffmenu() {
+        try {
+            App.setRoot("menu_home");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private Button btnAjouterEleve;
+
+
+    @FXML
+    private void ouvrirAjoutEleve() {
+        try {
+            // Charge le fichier FXML de l'ajout d'élève
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("student_add.fxml"));
+            AnchorPane root = loader.load();
+
+            // Récupérer la scène actuelle
+            Stage stage = (Stage) btnAjouterEleve.getScene().getWindow();
+
+            // Remplacer la scène par la nouvelle
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Ajouter un élève");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private Button btnModifierEleve;
+
+    @FXML
+    private void ouvrirModificationEleve() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("student_change.fxml"));
+            AnchorPane root = loader.load();
+
+            Stage stage = (Stage) btnModifierEleve.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Modifier un élève");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private Button btnSupprimerEleve;
+
+    @FXML
+    private void ouvrirSuppressionEleve() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("student_delete.fxml"));
+            AnchorPane root = loader.load();
+
+            Stage stage = (Stage) btnSupprimerEleve.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Supprimer un élève");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
