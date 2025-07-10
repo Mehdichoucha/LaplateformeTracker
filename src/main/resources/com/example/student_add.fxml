@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="374.0" prefWidth="450.0" style="-fx-background-color: #033E85;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="374.0" prefWidth="450.0" style="-fx-background-color: #033E85;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.StudentAddController">
    <children>
       <Pane layoutX="47.0" layoutY="48.0" prefHeight="278.0" prefWidth="356.0" style="-fx-background-color: #FFFFFF;">
          <children>
@@ -17,7 +17,6 @@
                   <Font size="15.0" />
                </font>
             </Text>
-            <Button layoutX="124.0" layoutY="230.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Modifier" />
             <Pane layoutX="92.0" layoutY="14.0" prefHeight="27.0" prefWidth="173.0">
                <children>
                   <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter un(e) élève(e)" wrappingWidth="200.755859375">
@@ -45,6 +44,8 @@
             </Text>
             <TextField layoutX="132.0" layoutY="184.0" prefHeight="27.0" prefWidth="196.0" />
             <TextField layoutX="132.0" layoutY="61.0" prefHeight="27.0" prefWidth="196.0" />
+            <Button fx:id="btnModifier" layoutX="197.0" layoutY="230.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Modifier" onAction="#retourMenuChange" />
+            <Button fx:id="btnQuitter" layoutX="54.0" layoutY="230.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Quitter" onAction="#retourMenuQuit" />
          </children>
       </Pane>
    </children>

@@ -1,2 +1,10 @@
+com\example\Eleves.class
+com\example\MainController$1.class
+com\example\ElevesDAO.class
+com\example\StudentChangeController.class
+com\example\DatabaseConnection.class
 com\example\App.class
+com\example\MainController.class
+com\example\StudentAddController.class
+com\example\StudentDeleteController.class
 com\example\HomeController.class
