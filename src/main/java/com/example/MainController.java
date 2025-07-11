@@ -69,8 +69,6 @@ public class MainController implements Initializable {
         Task<ObservableList<Eleves>> task = new Task<ObservableList<Eleves>>() {
             @Override
             protected ObservableList<Eleves> call() throws Exception {
-                updateMessage("Chargement des données...");
-                
                 // Récupérer les valeurs des filtres
                 String filtreNom = txtFiltreNom.getText().trim();
                 String filtrePrenom = txtFiltrePrenom.getText().trim();

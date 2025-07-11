@@ -13,7 +13,7 @@
    <children>
       <Pane layoutX="47.0" layoutY="54.0" prefHeight="327.0" prefWidth="356.0" style="-fx-background-color: #FFFFFF;">
          <children>
-            <TextField layoutX="132.0" layoutY="100.0" prefHeight="27.0" prefWidth="196.0" />
+            <TextField fx:id="txtNom" layoutX="132.0" layoutY="100.0" prefHeight="27.0" prefWidth="196.0" />
             <Text layoutX="26.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" wrappingWidth="109.0">
                <font>
                   <Font size="15.0" />
@@ -29,18 +29,19 @@
                   </Text>
                </children>
             </Pane>
-            <MenuButton layoutX="34.0" layoutY="54.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="289.0" text="Élèves">
+            <MenuButton fx:id="menuEleves" layoutX="34.0" layoutY="54.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="289.0" text="Élèves">
                <items>
                   <MenuItem mnemonicParsing="false" text="Action 1" />
                   <MenuItem mnemonicParsing="false" text="Action 2" />
                </items>
             </MenuButton>
+            <TextField fx:id="txtPrenom" layoutX="132.0" layoutY="142.0" prefHeight="27.0" prefWidth="196.0" />
             <Text layoutX="26.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom" wrappingWidth="109.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
-            <TextField layoutX="132.0" layoutY="142.0" prefHeight="27.0" prefWidth="196.0" />
+            <TextField fx:id="txtAge" layoutX="132.0" layoutY="184.0" prefHeight="27.0" prefWidth="196.0" />
             <Text layoutX="26.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Âge" wrappingWidth="109.0">
                <font>
                   <Font size="15.0" />
@@ -51,8 +52,7 @@
                   <Font size="15.0" />
                </font>
             </Text>
-            <TextField layoutX="132.0" layoutY="184.0" prefHeight="27.0" prefWidth="196.0" />
-            <TextField layoutX="132.0" layoutY="226.0" prefHeight="27.0" prefWidth="196.0" />
+            <TextField fx:id="txtMoyenne" layoutX="132.0" layoutY="226.0" prefHeight="27.0" prefWidth="196.0" />
             <Button fx:id="btnQuitter" layoutX="52.0" layoutY="278.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Quitter" onAction="#retourMenuQuit"/>
          </children>
       </Pane>

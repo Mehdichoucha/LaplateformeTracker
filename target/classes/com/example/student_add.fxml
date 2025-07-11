@@ -11,7 +11,9 @@
    <children>
       <Pane layoutX="47.0" layoutY="48.0" prefHeight="278.0" prefWidth="356.0" style="-fx-background-color: #FFFFFF;">
          <children>
-            <TextField layoutX="132.0" layoutY="100.0" prefHeight="27.0" prefWidth="196.0" />
+            <TextField fx:id="txtNom" layoutX="132.0" layoutY="61.0" prefHeight="27.0" prefWidth="196.0" />
+            <TextField fx:id="txtPrenom" layoutX="132.0" layoutY="100.0" prefHeight="27.0" prefWidth="196.0" />
+            <TextField fx:id="txtAge" layoutX="132.0" layoutY="142.0" prefHeight="27.0" prefWidth="196.0" />
             <Text layoutX="26.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom" wrappingWidth="109.0">
                <font>
                   <Font size="15.0" />
@@ -31,7 +33,6 @@
                   <Font size="15.0" />
                </font>
             </Text>
-            <TextField layoutX="132.0" layoutY="142.0" prefHeight="27.0" prefWidth="196.0" />
             <Text layoutX="26.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Moyenne" wrappingWidth="109.0">
                <font>
                   <Font size="15.0" />
@@ -43,7 +44,6 @@
                </font>
             </Text>
             <TextField layoutX="132.0" layoutY="184.0" prefHeight="27.0" prefWidth="196.0" />
-            <TextField layoutX="132.0" layoutY="61.0" prefHeight="27.0" prefWidth="196.0" />
             <Button fx:id="btnModifier" layoutX="197.0" layoutY="230.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Modifier" onAction="#retourMenuChange" />
             <Button fx:id="btnQuitter" layoutX="54.0" layoutY="230.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Quitter" onAction="#retourMenuQuit" />
          </children>

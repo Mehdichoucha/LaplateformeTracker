@@ -136,4 +136,64 @@ public class ElevesDAO {
         
         return eleves;
     }
+
+    // Ajouté pour intégration avec les contrôleurs JavaFX
+    public boolean ajouterEleve(Eleves eleve) {
+        String sql = "INSERT INTO etudiant (nom, prenom, age) VALUES (?, ?, ?)";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, eleve.getNom());
+            stmt.setString(2, eleve.getPrenom());
+            stmt.setInt(3, eleve.getAge());
+            int result = stmt.executeUpdate();
+            return result > 0;
+        } catch (SQLException e) {
+            System.err.println("Erreur lors de l'ajout de l'élève : " + e.getMessage());
+            return false;
+        }
+    }
+
+    public boolean modifierEleve(Eleves eleve) {
+        String sql = "UPDATE etudiant SET nom = ?, prenom = ?, age = ? WHERE id = ?";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, eleve.getNom());
+            stmt.setString(2, eleve.getPrenom());
+            stmt.setInt(3, eleve.getAge());
+            stmt.setInt(4, eleve.getId());
+            int result = stmt.executeUpdate();
+            return result > 0;
+        } catch (SQLException e) {
+            System.err.println("Erreur lors de la modification de l'élève : " + e.getMessage());
+            return false;
+        }
+    }
+
+    public boolean supprimerEleve(int id) {
+        String sql = "DELETE FROM etudiant WHERE id = ?";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            int result = stmt.executeUpdate();
+            return result > 0;
+        } catch (SQLException e) {
+            System.err.println("Erreur lors de la suppression de l'élève : " + e.getMessage());
+            return false;
+        }
+    }
+
+    public boolean modifierMoyenne(int idEleve, int nouvelleMoyenne) {
+        // Ici, tu peux soit mettre à jour une note existante, soit en ajouter une nouvelle
+        String sql = "UPDATE note SET note = ? WHERE etudiant_id = ?"; // ou INSERT si pas de note
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, nouvelleMoyenne);
+            stmt.setInt(2, idEleve);
+            int result = stmt.executeUpdate();
+            return result > 0;
+        } catch (SQLException e) {
+            System.err.println("Erreur lors de la modification de la moyenne de l'élève : " + e.getMessage());
+            return false;
+        }
+    }
 }
