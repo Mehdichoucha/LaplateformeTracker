@@ -17,22 +17,22 @@
                   <Font size="15.0" />
                </font>
             </Text>
-            <Pane layoutX="92.0" layoutY="14.0" prefHeight="27.0" prefWidth="173.0">
+            <Pane layoutX="106.0" layoutY="14.0" prefHeight="27.0" prefWidth="144.0">
                <children>
-                  <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter un(e) élève(e)" wrappingWidth="200.755859375">
+                  <Text layoutX="6.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Créer un compte" wrappingWidth="139.755859375">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Text>
                </children>
             </Pane>
-            <Text layoutX="26.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Âge" wrappingWidth="109.0">
+            <Text layoutX="26.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Identifiant" wrappingWidth="109.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
             <TextField layoutX="132.0" layoutY="142.0" prefHeight="27.0" prefWidth="196.0" />
-            <Text layoutX="26.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Moyenne" wrappingWidth="109.0">
+            <Text layoutX="26.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe" wrappingWidth="109.0">
                <font>
                   <Font size="15.0" />
                </font>
@@ -44,8 +44,8 @@
             </Text>
             <TextField layoutX="132.0" layoutY="184.0" prefHeight="27.0" prefWidth="196.0" />
             <TextField layoutX="132.0" layoutY="61.0" prefHeight="27.0" prefWidth="196.0" />
-            <Button fx:id="btnModifier" layoutX="197.0" layoutY="230.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Modifier" onAction="#retourMenuChange" />
-            <Button fx:id="btnQuitter" layoutX="54.0" layoutY="230.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Quitter" onAction="#retourMenuQuit" />
+            <Button fx:id="btnModifier" layoutX="197.0" layoutY="230.0" mnemonicParsing="false" onAction="#retourMenuChange" prefHeight="25.0" prefWidth="109.0" text="Créer" />
+            <Button fx:id="btnQuitter" layoutX="54.0" layoutY="230.0" mnemonicParsing="false" onAction="#retourMenuQuit" prefHeight="25.0" prefWidth="109.0" text="Quitter" />
          </children>
       </Pane>
    </children>

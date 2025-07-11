@@ -7,21 +7,17 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:controller="com.example.HomeController"
-            maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="337.0" prefWidth="450.0"
-            style="-fx-background-color: #033E85;"
-            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="337.0" prefWidth="450.0" style="-fx-background-color: #033E85;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.HomeController">
    <children>
       <Pane layoutX="47.0" layoutY="54.0" prefHeight="230.0" prefWidth="356.0" style="-fx-background-color: #FFFFFF;">
          <children>
-            <TextField layoutX="135.0" layoutY="123.0" prefHeight="27.0" prefWidth="196.0" />
+            <TextField fx:id="identifiantField" layoutX="135.0" layoutY="78.0" prefHeight="27.0" prefWidth="196.0" />
             <Text layoutX="26.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe" wrappingWidth="109.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
-            <Button fx:id="btnConnexion" layoutX="124.0" layoutY="179.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Connexion" onAction="#logintomenu" />
+            <Button fx:id="btnConnexion" layoutX="200.0" layoutY="180.0" mnemonicParsing="false" onAction="#logintomenu" prefHeight="25.0" prefWidth="109.0" text="Connexion" />
             <Pane layoutX="91.0" layoutY="14.0" prefHeight="27.0" prefWidth="175.0">
                <children>
                   <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue" wrappingWidth="200.755859375">
@@ -36,7 +32,8 @@
                   <Font size="15.0" />
                </font>
             </Text>
-            <TextField layoutX="135.0" layoutY="78.0" prefHeight="27.0" prefWidth="196.0" />
+            <TextField fx:id="motdepasseField" layoutX="135.0" layoutY="123.0" prefHeight="27.0" prefWidth="196.0" />
+            <Button fx:id="btnConnexion1" layoutX="57.0" layoutY="180.0" mnemonicParsing="false" onAction="#logintomenu" prefHeight="25.0" prefWidth="109.0" text="Créer un compte" />
          </children>
       </Pane>
    </children>
