@@ -30,7 +30,6 @@ public class App extends Application {
 
     @Override
     public void stop() {
-        // Fermer la connexion à la base de données à la fermeture de l'application
         DatabaseConnection.closeConnection();
     }
 

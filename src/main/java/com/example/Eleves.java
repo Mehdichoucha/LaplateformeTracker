@@ -17,7 +17,7 @@ public class Eleves {
         this.nom = new SimpleStringProperty(nom);
         this.prenom = new SimpleStringProperty(prenom);
         this.age = new SimpleIntegerProperty(age);
-        this.moyenne = new SimpleIntegerProperty(0); // Valeur par défaut
+        this.moyenne = new SimpleIntegerProperty(0);
     }
     
     public Eleves(int id, String nom, String prenom, int age, int moyenne) {
@@ -28,21 +28,18 @@ public class Eleves {
         this.moyenne = new SimpleIntegerProperty(moyenne);
     }
     
-    // Getters pour les propriétés (nécessaires pour TableView)
     public IntegerProperty idProperty() { return id; }
     public StringProperty nomProperty() { return nom; }
     public StringProperty prenomProperty() { return prenom; }
     public IntegerProperty ageProperty() { return age; }
     public IntegerProperty moyenneProperty() { return moyenne; }
 
-    // Getters classiques
     public int getId() { return id.get(); }
     public String getNom() { return nom.get(); }
     public String getPrenom() { return prenom.get(); }
     public int getAge() { return age.get(); }
     public int getMoyenne() { return moyenne.get(); }
 
-    // Setters
     public void setId(int id) { this.id.set(id); }
     public void setNom(String nom) { this.nom.set(nom); }
     public void setPrenom(String prenom) { this.prenom.set(prenom); }

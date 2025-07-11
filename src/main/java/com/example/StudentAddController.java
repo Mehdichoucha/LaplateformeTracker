@@ -33,7 +33,6 @@ public class StudentAddController implements Initializable {
 
     private void retournerMenu() {
         try {
-            // 👉 Juste cette ligne a changé
             FXMLLoader loader = new FXMLLoader(getClass().getResource("menu_main.fxml"));
             AnchorPane root = loader.load();
 

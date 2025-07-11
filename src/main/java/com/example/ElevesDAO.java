@@ -57,7 +57,6 @@ public class ElevesDAO {
             "WHERE 1=1"
         );
         
-        // Ajouter les conditions de filtrage
         if (!filtreNom.isEmpty()) {
             queryBuilder.append(" AND e.nom ILIKE ?");
         }
@@ -73,7 +72,6 @@ public class ElevesDAO {
         
         queryBuilder.append(" GROUP BY e.id, e.nom, e.prenom, e.age");
         
-        // Filtres sur la moyenne (après le GROUP BY)
         if (!filtreMoyenne.isEmpty() || !filtreMoyenneMax.isEmpty()) {
             queryBuilder.append(" HAVING 1=1");
             if (!filtreMoyenne.isEmpty()) {
@@ -91,7 +89,6 @@ public class ElevesDAO {
             
             int paramIndex = 1;
             
-            // Définir les paramètres WHERE
             if (!filtreNom.isEmpty()) {
                 stmt.setString(paramIndex++, "%" + filtreNom + "%");
             }
@@ -105,7 +102,7 @@ public class ElevesDAO {
                 stmt.setInt(paramIndex++, Integer.parseInt(filtreAgeMax));
             }
             
-            // Définir les paramètres HAVING (pour la moyenne)
+
             if (!filtreMoyenne.isEmpty()) {
                 stmt.setInt(paramIndex++, Integer.parseInt(filtreMoyenne));
             }

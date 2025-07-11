@@ -29,7 +29,7 @@ public class MainController implements Initializable {
     @FXML private Button btnEffacerFiltres;
     @FXML private Label lblStatus;
     
-    // Champs de filtres
+
     @FXML private TextField txtFiltreNom;
     @FXML private TextField txtFiltrePrenom;
     @FXML private TextField txtFiltreAge;
@@ -44,14 +44,14 @@ public class MainController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         elevesDAO = new ElevesDAO();
         
-        // Configuration des colonnes
+
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colNom.setCellValueFactory(new PropertyValueFactory<>("nom"));
         colPrenom.setCellValueFactory(new PropertyValueFactory<>("prenom"));
         colAge.setCellValueFactory(new PropertyValueFactory<>("age"));
         colMoyenne.setCellValueFactory(new PropertyValueFactory<>("moyenne"));
         
-        // Redimensionnement automatique des colonnes
+
         if (tableEleves != null) {
             colId.prefWidthProperty().bind(tableEleves.widthProperty().multiply(0.1));
             colNom.prefWidthProperty().bind(tableEleves.widthProperty().multiply(0.25));
@@ -60,7 +60,7 @@ public class MainController implements Initializable {
             colMoyenne.prefWidthProperty().bind(tableEleves.widthProperty().multiply(0.2));
         }
         
-        // Charger les données au démarrage
+
         chargerDonnees();
     }
     
@@ -71,7 +71,7 @@ public class MainController implements Initializable {
             protected ObservableList<Eleves> call() throws Exception {
                 updateMessage("Chargement des données...");
                 
-                // Récupérer les valeurs des filtres
+
                 String filtreNom = txtFiltreNom.getText().trim();
                 String filtrePrenom = txtFiltrePrenom.getText().trim();
                 String filtreAge = txtFiltreAge.getText().trim();
@@ -79,7 +79,7 @@ public class MainController implements Initializable {
                 String filtreMoyenne = txtFiltreMoyenne.getText().trim();
                 String filtreMoyenneMax = txtFiltreMoyenneMax.getText().trim();
                 
-                // Vérifier si des filtres sont appliqués
+
                 boolean hasFilters = !filtreNom.isEmpty() || !filtrePrenom.isEmpty() || 
                                    !filtreAge.isEmpty() || !filtreAgeMax.isEmpty() ||
                                    !filtreMoyenne.isEmpty() || !filtreMoyenneMax.isEmpty();
@@ -128,7 +128,7 @@ public class MainController implements Initializable {
     }
 
     @FXML
-    private Button btnDeconnexion;  // lien avec le bouton Déconnexion du FXML
+    private Button btnDeconnexion;
 
     @FXML
     private void logoffmenu() {
@@ -146,14 +146,11 @@ public class MainController implements Initializable {
     @FXML
     private void ouvrirAjoutEleve() {
         try {
-            // Charge le fichier FXML de l'ajout d'élève
             FXMLLoader loader = new FXMLLoader(getClass().getResource("student_add.fxml"));
             AnchorPane root = loader.load();
 
-            // Récupérer la scène actuelle
             Stage stage = (Stage) btnAjouterEleve.getScene().getWindow();
 
-            // Remplacer la scène par la nouvelle
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.setTitle("Ajouter un élève");
@@ -200,6 +197,4 @@ public class MainController implements Initializable {
             e.printStackTrace();
         }
     }
-
-
 }

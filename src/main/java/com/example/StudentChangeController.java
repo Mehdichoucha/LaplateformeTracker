@@ -32,7 +32,7 @@ public class StudentChangeController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("menu_main.fxml"));
             AnchorPane root = loader.load();
 
-            Stage stage = (Stage) btnModifier.getScene().getWindow(); // fonctionne aussi pour btnQuitter
+            Stage stage = (Stage) btnModifier.getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.setTitle("Menu Principal");

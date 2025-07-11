@@ -12,23 +12,20 @@ import javafx.stage.Stage;
 public class StudentDeleteController {
 
     @FXML
-    private Button btnSupprimer;  // Le bouton Supprimer dans student_delete.fxml
+    private Button btnSupprimer;
 
     @FXML
-    private Button btnQuitter;    // Le bouton Quitter dans student_delete.fxml
+    private Button btnQuitter;
 
     @FXML
     private void initialize() {
-        // Pas obligatoire ici mais pratique si tu veux ajouter des actions au démarrage
     }
 
     @FXML
     private void fermerFenetre() {
         try {
-            // Récupérer la fenêtre actuelle
             Stage stage = (Stage) btnQuitter.getScene().getWindow();
 
-            // Charger le menu principal à nouveau
             FXMLLoader loader = new FXMLLoader(getClass().getResource("menu_main.fxml"));
             AnchorPane root = loader.load();
 
